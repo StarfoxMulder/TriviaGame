@@ -140,7 +140,7 @@ $(document).ready(function() {
 		$('span').empty();
 		$('span').attr('height', '100%');
 		$('span').attr('width', '100%');
-		$('#endGameGone').empty();
+		$('#endGameGone').remove();
 
 		if (number > 0) {
 			$('span').html("<h2>You have answered all of the questions.  Here are your results!</h2>");
