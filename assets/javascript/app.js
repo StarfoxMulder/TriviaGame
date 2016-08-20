@@ -2,6 +2,7 @@ $(document).ready(function() {
 	var q = 0;
 	var hits = 0;
 	var misses = 0;
+	var number = 120;
 
 	var questionArray = [
 	{	'question':'What was the name of Frank E. Stranges\' personal alien?',
@@ -25,18 +26,53 @@ $(document).ready(function() {
 		'answer3': 'Jesus',
 		'correct': 'Akon'
 	},
-	{	'question' : 'What was Sharon, from Meton, out gathering?',
-		'answer0': 'POGs',
-		'answer1': 'Roots',
-		'answer2': 'Pok&#233;mon',
-		'answer3': 'Baseball Cards'
+	{	'question' : 'What planet was Valient Thor from?',
+		'answer0': 'Meton',
+		'answer1': 'Venus',
+		'answer2': 'Clarion',
+		'answer3': 'Mars'
+	},
+	{	'question' : 'How many spheres are on the bottom of the ships seen by George Adamski?',
+		'answer0': '0',
+		'answer1': '1',
+		'answer2': '3',
+		'answer3': '15'
 
+	},
+	{	'question' : 'On Uumo, what do ducks turn into?',
+		'answer0': 'People',
+		'answer1': 'Future Souls',
+		'answer2': 'Butterflies',
+		'answer3': 'Other Ducks'
+
+	},
+	{	'question' : 'The Korendians first made contact in which state of the USA?',
+		'answer0': 'Vermont',
+		'answer1': 'North Carolina',
+		'answer2': 'Michigan',
+		'answer3': 'California'
+	},
+	{	'question' : 'What was the name of the group communicating with the Uumites?',
+		'answer0': 'Happy Whale Club',
+		'answer1': 'Umm...',
+		'answer2': 'Sprinkle Garden',
+		'answer3': 'Tiny Town'
+
+	},
+	{	'question' : 'How many buttons were on Valient Thor\'s toilet?',
+		'answer0': '3',
+		'answer1': '2',
+		'answer2': '1',
+		'answer3': '0'
 	}
 	];
 
 	setupGame();
-	$('checkbox').live('click', function() {
-		$(this).closest('form').submit();
+
+	$('.checkbox').click(function() {
+		guess = $(this).attr('id');
+		gamePlay();
+		nextQ();
 	});
 
 	function setupGame() {
@@ -55,7 +91,7 @@ $(document).ready(function() {
 			endGame ();
 		} else {
 
-		q = Math.floor(Math.random() * (questionArray.length + 1));
+		q = Math.floor(Math.random() * (questionArray.length)); // I had *questionArray.length + 1), but I think that skipped the 0 index
 
 		$('#question').html('<h3>'+questionArray[q].question+'</h3>');
 		$('#a0').html('<input type="checkbox">'+questionArray[q].answer0);
@@ -66,7 +102,7 @@ $(document).ready(function() {
 	};
 
 	function runTime() {
-		counter = setInterval(decrement(), 1000);
+		counter = setInterval(decrement, 1000);
 	}
 
 	function decrement() {
@@ -82,17 +118,17 @@ $(document).ready(function() {
 
 	function gamePlay() {
 
-		var correct = question[q].correct; 
+		var correct = questionArray[q].correct; 
 
-		if (selection == correct) {
+		if (guess == correct) {
 			hits++;
-			questionArray[q].splice(q, 1);
+			questionArray.splice(q, 1);
 			if (questionArray.length == 0) {
 				endGame();
 			};
 		} else {
 			misses++;
-			questionArray[q].splice(q, 1);
+			questionArray.splice(q, 1);
 			if (questionArray.length == 0) {
 				endGame();
 			};
@@ -101,6 +137,11 @@ $(document).ready(function() {
 	}
 
 	function endGame() {
+		$('span').empty();
+		$('span').attr('height', '100%');
+		$('span').attr('width', '100%');
+		$('#endGameGone').empty();
+
 		if (number > 0) {
 			$('span').html("<h2>You have answered all of the questions.  Here are your results!</h2>");
 			$('span').append("<h2>Number Correct: "+hits+"</h2>");
