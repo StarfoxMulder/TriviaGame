@@ -35,6 +35,9 @@ $(document).ready(function() {
 	];
 
 	setupGame();
+	$('checkbox').live('click', function() {
+		$(this).closest('form').submit();
+	});
 
 	function setupGame() {
 
@@ -55,15 +58,15 @@ $(document).ready(function() {
 		q = Math.floor(Math.random() * (questionArray.length + 1));
 
 		$('#question').html('<h3>'+questionArray[q].question+'</h3>');
-		$('#a0').html('<input type="checkbox">'+questionArray[q].answer0+'');
-		$('#a1').html('<input type="checkbox">'+questionArray[q].answer1+'');
-		$('#a2').html('<input type="checkbox">'+questionArray[q].answer2+'');
-		$('#a3').html('<input type="checkbox">'+questionArray[q].answer3+'');
+		$('#a0').html('<input type="checkbox">'+questionArray[q].answer0);
+		$('#a1').html('<input type="checkbox">'+questionArray[q].answer1);
+		$('#a2').html('<input type="checkbox">'+questionArray[q].answer2);
+		$('#a3').html('<input type="checkbox">'+questionArray[q].answer3);
 	};
 	};
 
 	function runTime() {
-		counter = setInterval(decrement, 1000);
+		counter = setInterval(decrement(), 1000);
 	}
 
 	function decrement() {
@@ -98,8 +101,16 @@ $(document).ready(function() {
 	}
 
 	function endGame() {
-
-	}
+		if (number > 0) {
+			$('span').html("<h2>You have answered all of the questions.  Here are your results!</h2>");
+			$('span').append("<h2>Number Correct: "+hits+"</h2>");
+			$('span').append("<h2>Number Incorrect: "+misses+"</h2>");
+		} else {
+			$('span').html("<h2>You have run out of time.  Here are your results!</h2>");
+			$('span').append("<h2>Number Correct: "+hits+"</h2>");
+			$('span').append("<h2>Number Incorrect: "+misses+"</h2>");
+		}
+	};
 
 	function timeConverter(t){
 
