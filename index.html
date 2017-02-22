@@ -22,25 +22,27 @@
 		<main>
 			<div class="row">
 				<div class="col-xs-8 col-xs-offset-2" id="gameCont">
-				<span><h2>Click the mouse inside of this box to begin the game. Once the game begins you will have two minutes to answer as many questions as you can. <br> Good luck, Space Brother!</h2></span>
-					<div class="row" id="endGameGone">
-						<div class="col-xs-6" id="timerTitle">
-							
+				<span><h2>Click the mouse inside of this box to begin the game. Once the game begins you will have two minutes to answer as many questions as you can. <br> <br> Good luck, Space Brother!</h2></span>
+					<div class="row endGameGone">
+						<div class="row">
+							<div class="col-xs-6 col-xs-offset-3" id="timerTitle"></div>
 						</div>
-						<div class="col-xs-6" id="timerCont">
-							<h2 id="timer"></h2>
+						<div class="row">
+							<div class="col-xs-6 col-xs-offset-3" id="timerCont">
+								<h2 id="timer"></h2>
+							</div>
 						</div>
+					</div>
+					<div class="row endGameGone">
 						<div class="col-xs-12" id="questionCont">
 							<p id="question"></p>
 						</div>
-						<form class="col-xs-12" id="answerCont">
-							<div class="row">
-								<div class="col-xs-3 checkbox"><label id="a0"></label></div>
-								<div class="col-xs-3 checkbox"><label id="a1"></label></div>
-								<div class="col-xs-3 checkbox"><label id="a2"></label></div>
-								<div class="col-xs-3 checkbox"><label id="a3"></label></div>
-							</div>
-						</form>
+					</div>
+					<div class="row endGameGone" id="answerCont">
+						<div class="col-xs-3 checkbox"><label id="a0"></label></div>
+						<div class="col-xs-3 checkbox"><label id="a1"></label></div>
+						<div class="col-xs-3 checkbox"><label id="a2"></label></div>
+						<div class="col-xs-3 checkbox"><label id="a3"></label></div>
 					</div>
 				</div>
 			</div>

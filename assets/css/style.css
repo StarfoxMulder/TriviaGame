@@ -35,33 +35,56 @@ span {
 	color: white;
 	font-weight: bolder;
 	letter-spacing: 5px;
-	padding: 40px 45px;
+/*	padding: 40px 45px;*/
 }
 
 #timerTitle {
-	text-align: right;
+	text-align: center;
+	letter-spacing: 5px;
 }
 
 #timer {
 	text-align: left;
+	margin-left: 2%;
+	vertical-align: middle;
+	text-align: center;
 }
 
 #gameCont {
 	margin-top: 75px;
 	margin-bottom: 50px;
 	background-color: #3D4D42;
-	height: 650px;
+/*	height: 500px;*/
 	padding: 5%;
 }
 
 #questionCont {
-	margin: 20px 15px;
+	margin-top: 5%;
 	font-family: 'ABeeZee', sans-serif;
-	letter-spacing: 8px;
+	letter-spacing: 5px;
+	text-align: center;
 }
 
 #answerCont {
-	margin: 20px 15px;
+	margin-top: 5%;
 	font-family: 'ABeeZee', sans-serif;
-	letter-spacing: 8px;
+	letter-spacing: 5px;
+}
+.checkbox {
+	margin-top: 0;
+	text-align: center;
+	vertical-align: top;
+	letter-spacing: 5px;
+}
+label {
+	vertical-align: top;
+	margin-top: 0;
+}
+label:hover {
+	color: #46B3A6;
+}
+
+.result {
+	text-align: center;
+	margin-top: 5%;
 }

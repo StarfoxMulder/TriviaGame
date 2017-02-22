@@ -98,14 +98,15 @@ $(document).ready(function() {
 			q = Math.floor(Math.random() * (questionArray.length)); // I had *questionArray.length + 1), but I think that skipped the 0 index
 
 			$('#question').html('<h3>'+questionArray[q].question+'</h3>');
-			$('#a0').html('<input type="checkbox">'+questionArray[q].answer0);
-			$('#a1').html('<input type="checkbox">'+questionArray[q].answer1);
-			$('#a2').html('<input type="checkbox">'+questionArray[q].answer2);
-			$('#a3').html('<input type="checkbox">'+questionArray[q].answer3);
+			$('#a0').html(questionArray[q].answer0);
+			$('#a1').html(questionArray[q].answer1);
+			$('#a2').html(questionArray[q].answer2);
+			$('#a3').html(questionArray[q].answer3);
 		};
 	};
 
 	function runTime() {
+		$('#timer').html("2:00");
 		counter = setInterval(decrement, 1000);
 	}
 	function decrement() {
@@ -149,16 +150,16 @@ $(document).ready(function() {
 		$('span').empty();
 		$('span').attr('height', '100%');
 		$('span').attr('width', '100%');
-		$('#endGameGone').remove();
+		$('.endGameGone').remove();
 
 		if (number > 0) {
-			$('span').html("<h2>You have answered all of the questions.  Here are your results!</h2>");
-			$('span').append("<h2>Number Correct: "+hits+"</h2>");
-			$('span').append("<h2>Number Incorrect: "+misses+"</h2>");
+			$('span').html("<h2 class='result'>You have answered all of the questions.  Here are your results!</h2>");
+			$('span').append("<h2 class='result'>Number Correct: "+hits+"</h2>");
+			$('span').append("<h2 class='result'>Number Incorrect: "+misses+"</h2>");
 		} else {
-			$('span').html("<h2>You have run out of time.  Here are your results!</h2>");
-			$('span').append("<h2>Number Correct: "+hits+"</h2>");
-			$('span').append("<h2>Number Incorrect: "+misses+"</h2>");
+			$('span').html("<h2 class='result'>You have run out of time.  Here are your results!</h2>");
+			$('span').append("<h2 class='result'>Number Correct: "+hits+"</h2>");
+			$('span').append("<h2 class='result'>Number Incorrect: "+misses+"</h2>");
 		}
 	};
 
