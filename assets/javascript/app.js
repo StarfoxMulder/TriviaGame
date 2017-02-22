@@ -30,40 +30,43 @@ $(document).ready(function() {
 		'answer0': 'Meton',
 		'answer1': 'Venus',
 		'answer2': 'Clarion',
-		'answer3': 'Mars'
+		'answer3': 'Mars',
+		'correct': 'Venus'
 	},
 	{	'question' : 'How many spheres are on the bottom of the ships seen by George Adamski?',
 		'answer0': '0',
 		'answer1': '1',
 		'answer2': '3',
-		'answer3': '15'
-
+		'answer3': '15',
+		'correct': '3'
 	},
 	{	'question' : 'On Uumo, what do ducks turn into?',
 		'answer0': 'People',
 		'answer1': 'Future Souls',
 		'answer2': 'Butterflies',
-		'answer3': 'Other Ducks'
-
+		'answer3': 'Other Ducks',
+		'correct': 'Butterflies'
 	},
 	{	'question' : 'The Korendians first made contact in which state of the USA?',
 		'answer0': 'Vermont',
 		'answer1': 'North Carolina',
 		'answer2': 'Michigan',
-		'answer3': 'California'
+		'answer3': 'California',
+		'correct': 'California'
 	},
 	{	'question' : 'What was the name of the group communicating with the Uumites?',
 		'answer0': 'Happy Whale Club',
 		'answer1': 'Umm...',
 		'answer2': 'Sprinkle Garden',
-		'answer3': 'Tiny Town'
-
+		'answer3': 'Tiny Town',
+		'correct': 'Happy Whale Club'
 	},
 	{	'question' : 'How many buttons were on Valient Thor\'s toilet?',
 		'answer0': '3',
 		'answer1': '2',
 		'answer2': '1',
-		'answer3': '0'
+		'answer3': '0',
+		'correct': '3'
 	}
 	];
 
@@ -118,7 +121,7 @@ $(document).ready(function() {
 
 	function gamePlay() {
 
-		var correct = questionArray[q].correct; 
+		var correct = questionArray[q].correct;
 
 		if (guess == correct) {
 			hits++;
@@ -170,4 +173,4 @@ $(document).ready(function() {
     };
 
 
-});	
+});
